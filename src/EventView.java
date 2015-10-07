@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -14,13 +15,20 @@ import javax.swing.JOptionPane;
  * @author Ian
  */
 public class EventView extends javax.swing.JFrame {
-
+    CalendarController con;
     /**
      * Creates new form EventView
      */
-    public EventView() {
+    public EventView(CalendarController c) {
+        this.con = c;
         initComponents();
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    }
+    
+    public void add(){ //will call addevent from calendar controller and send data
+        con.addEvent(null, WIDTH, WIDTH, WIDTH, Color.yellow);
+        
+        
     }
 
     /**
@@ -133,6 +141,7 @@ public class EventView extends javax.swing.JFrame {
 
     private void addeventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addeventActionPerformed
         // TODO add your handling code here:
+        add();
         JOptionPane.showOptionDialog(null, "Event Added!",
                   "", JOptionPane.PLAIN_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, null, null);
     }//GEN-LAST:event_addeventActionPerformed
@@ -144,7 +153,7 @@ public class EventView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    //public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -169,12 +178,12 @@ public class EventView extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EventView().setVisible(true);
-            }
-        });
-    }
+    //    java.awt.EventQueue.invokeLater(new Runnable() {
+   //         public void run() {
+    //            new EventView().setVisible(true);
+    //        }
+   //     });
+   // }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addevent;
