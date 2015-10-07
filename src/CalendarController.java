@@ -21,6 +21,7 @@ public class CalendarController {
     public CalendarController(){
         EventView ev = new EventView(this);
         CalendarProgram cp = new CalendarProgram(this);
+        //set cp visible right away (calendar)
         
         
         
@@ -28,7 +29,12 @@ public class CalendarController {
         
     }
     
-    public void addEvent(String n, int day, int month, int year, Color color){
+    public void viewDay(){
+        //will make event visible
+        
+    }
+    
+    public void addEvent(String n, int day, int month, int year, Color color){  //called by eventview to add event
         events.add(new Events(n,day,month,year,color));
         
         
