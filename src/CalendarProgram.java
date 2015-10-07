@@ -16,9 +16,10 @@ import java.util.*;
 import sms.SMS;
 
 public class CalendarProgram{
-    
-        ArrayList<SMS> events;
-	View nv;
+        
+        CalendarController con;
+        //ArrayList<Event> events;
+	//View nv;
         
         /**** Day Components ****/
 	public int yearBound, monthBound, dayBound, yearToday, monthToday;
@@ -74,22 +75,23 @@ public class CalendarProgram{
 	}
         
         public void addEvent(SMS e) {
-            events.add(e);
+            //events.add(e);
+            con.addEvent(null, null, null);
+            
         }
         
         public void removeEvent(SMS e) {
-            events.remove(e);
+            //events.remove(e);
         }
         
-	public CalendarProgram(ArrayList<SMS> events, View view)
+	public CalendarProgram(CalendarController c)
         {
+                this.con = c;
 		try {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 }
 		catch (Exception e) {}
                 
-                this.events = events;
-                this.nv = view;
                 
 		frmMain = new JFrame ("Calendar Application");
                 frmMain.setSize(660, 750);
@@ -119,8 +121,8 @@ public class CalendarProgram{
                 MouseListener tableMouseListener = new MouseAdapter() {
                     @Override
                         public void mouseClicked(MouseEvent e) {
-                            EventView ev = new EventView();
-                            ev.setVisible(true);
+                            //EventView ev = new EventView();
+                            //ev.setVisible(true);
                            int row = calendarTable.rowAtPoint(e.getPoint());//get mouse-selected row
                            int col = calendarTable.columnAtPoint(e.getPoint());//get mouse-selected col
                            int[] newEntry = new int[]{row,col};//{row,col}=selected cell 
