@@ -16,11 +16,13 @@ import java.util.Date;
 public class CalendarController {
     
     ArrayList<Events> events = new ArrayList<Events>();
+    EventView e;
+    CalendarProgram p;
     
     
     public CalendarController(){
-        EventView ev = new EventView(this);
-        CalendarProgram cp = new CalendarProgram(this);
+        this.e = new EventView(this);
+        this.p = new CalendarProgram(this);
         //set cp visible right away (calendar)
         
         
@@ -30,7 +32,8 @@ public class CalendarController {
     }
     
     public void viewDay(){
-        //will make event visible
+        //will make eventview visible
+        
         
     }
     
