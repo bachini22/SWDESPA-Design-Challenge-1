@@ -22,7 +22,7 @@ public class DesignChallenge1 {
     public static void main(String[] args) {
         // TODO code application logic here
         ArrayList<SMS> events = new ArrayList<SMS>();
-        View v = new View();
+        View v = new View();;
         
         PSV psv = new PSV();
         psv.ReadFile("C:\\Users\\asus\\Desktop\\SWDESPA\\DC1\\Sample Files\\DLSU Unicalendar.psv");
