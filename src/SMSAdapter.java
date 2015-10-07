@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import java.util.Calendar;
 import sms.SMSView;
 
 /*
@@ -37,5 +38,6 @@ public class SMSAdapter implements ViewInterface{
         SMS datasms(name, date, color);  //will instantiate from SMS java. NOTE: note SMSView but SMS java
         
         sms.sendSMS(datasms);   //rem sms is from SMSView, datasms is from SMS
+    }
     
 }
